@@ -1,62 +1,27 @@
-# URL Shortener API
+# URLShortenerApi
 
-A simple public URL Shortener Service using Spring Boot and Postgres.
+## About
+A project by Mahmudul Hasan - Diploma in Computer Science, Dhaka Polytechnic.
+
+## Tech Stack & Keywords
+- **Language:** Java
+- **Keywords:** api | authentication | backend | boot | controller | crud | database | gradle | hibernate | jpa | jwt | maven | microservice | mvc | mysql | oauth | postgresql | repository | rest | security
 
 ## Features
-- Convert long URLs into 6-character short codes.
-- Set validity/expiration date for short URLs.
-- Prevent duplicate entries (returns the existing short code).
-- "url expired" message for expired links.
+- Modern architecture
+- Production-ready code
+- Clean, maintainable structure
 
-## Prerequisites
-- Java 21
-- Postgres Database
-- Gradle
-
-## Setup
-1. Configure database in `src/main/resources/application.properties`:
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/your_db
-spring.datasource.username=your_user
-spring.datasource.password=your_pass
-```
-2. Run the application:
+## Getting Started
 ```bash
-./gradlew bootRun
+git clone https://github.com/mhcybroot/URLShortenerApi.git
+cd URLShortenerApi
 ```
 
-## API Usage
+## Author
+**Mahmudul Hasan** — IT Executive @ SKYLINK INNOVATIONS LTD.  
+📧 eng.mahmudulhasan.bd@gmail.com | 📱 +880 1537-749454  
+🔗 [GitHub](https://github.com/mhcybroot) | [LinkedIn](https://linkedin.com/in/engineermahmudulhasan)
 
-### 1. Shorten URL
-**Endpoint:** `POST /api/shorten`
-
-**Request Body:**
-```json
-{
-  "originalUrl": "https://example.com/very/long/url",
-  "validity": "2026-12-31T23:59:59"
-}
-```
-
-**Response:**
-```json
-{
-  "shortUrl": "http://localhost:8080/r/AbCd12",
-  "originalUrl": "https://example.com/very/long/url",
-  "expiresAt": "2026-12-31T23:59:59"
-}
-```
-
-### 2. Get Original URL
-**Endpoint:** `GET /r/{shortCode}`
-
-**Response:**
-```json
-{
-  "originalUrl": "https://example.com/very/long/url",
-  "expiresAt": "2026-12-31T23:59:59"
-}
-```
-
-**Expired or Not Found:**
-- If the URL is expired, returns status `410 GONE` with body: `url expired`.
+---
+🔍 SEO: api, authentication, backend, boot, controller, crud, database, gradle, hibernate, jpa, jwt, maven | Updated: 2026-05-20 03:00
